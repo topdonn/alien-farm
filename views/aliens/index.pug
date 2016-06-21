@@ -1,0 +1,30 @@
+extends ../shared/template
+block title
+  h1 Aliens Index
+block content
+  .row
+    .col-md-2
+    .col-md-8
+      table
+        thead
+          tr
+            th.name Name
+            th.planet Planet
+            th.photo Photo
+            th.delete
+        tbody
+          each alien in aliens
+            tr
+              a(href= '../aliens/show/' + alien.id  )
+                td
+                  a(href= '../aliens/show/' + alien.id  )
+                    span= alien.name
+                td
+                  a(href= '../aliens/show/' + alien.id  )
+                    span= alien.planet
+                td(style='height: 120px;')
+                  a(href= '../aliens/show/' + alien.id  )
+                    img(src= alien.photo height='96px')
+                td
+                  form.form-horizontal(action= '/aliens/remove/' + alien.id, method='post')
+                    button.btn.btn-primary(type='submit') Terminate Alien

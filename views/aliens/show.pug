@@ -1,0 +1,9 @@
+extends ../shared/template
+block title
+  h1 Show Alien Details
+block content
+  h1= 'Name: ' + alien.name
+  h2= 'Planet: ' + alien.planet
+  img.fa.fa-spin(src= alien.photo height='384px')
+  form.form-horizontal(action='/aliens/remove' method='post')
+    button.btn.btn-primary(type='submit') Terminate Alien

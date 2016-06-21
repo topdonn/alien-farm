@@ -4,7 +4,7 @@ PATH  := $(BIN):$(PATH)
 main:
 	clear
 	@echo [main]
-	@echo Project: Template
+	@echo Project: Alien-Farm
 
 clean:
 	@echo [clean]
